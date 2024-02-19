@@ -12,7 +12,7 @@ router.get("/", (req, res) => {
     .get("https://db.ygoprodeck.com/api/v7/cardinfo.php")
     .then((response) => {
       let chosenCard = getRandomCard(response.data.data);
-      res.send(chosenCard);
+      res.json(chosenCard);
     })
     .catch((error) => console.error("unable to collect card", error));
 });
