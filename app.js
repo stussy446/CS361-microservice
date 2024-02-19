@@ -3,6 +3,7 @@
 import express from "express";
 import path from "path";
 import { fileURLToPath } from "url";
+import cors from "cors";
 
 import { default as homeRouter } from "./src/routes/Index.js";
 import { default as yugiohRouter } from "./src/routes/Yugioh.js";
@@ -10,6 +11,7 @@ import { default as yugiohRouter } from "./src/routes/Yugioh.js";
 // express setup
 const app = express();
 const port = 3000;
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
