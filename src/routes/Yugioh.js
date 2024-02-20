@@ -11,6 +11,7 @@ router.get("/", (req, res) => {
   axios
     .get("https://db.ygoprodeck.com/api/v7/cardinfo.php")
     .then((response) => {
+      console.log("request received, sending over card...");
       let chosenCard = getRandomCard(response.data.data);
       res.json(chosenCard);
     })
